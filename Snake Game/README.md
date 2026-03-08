@@ -1,1 +1,0 @@
-I programmed this classic snake game using Python. I learned MongoDB connectivity with Python using PyMongo and implemented it to this program. The scores, along with player names and difficulty levels are reflected in the MongoDB database.
