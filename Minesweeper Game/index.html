@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minesweeper Game</title>
+
+    <!-- Imported stylesheets for icons-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=explosion,refresh"
+    />
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen-overlay">
+      <div class="welcome-card">
+        <h1 class="welcome-title">Minesweeper</h1>
+
+        <div class="instruction-box">
+          <h3>How to Play:</h3>
+          <ul>
+            <li>
+              <strong>Left Click</strong> an empty tile to dig it and reveal
+              what's under it.
+            </li>
+            <li>
+              <strong>Number</strong> on a tile tell you how many mines are
+              hidden under its surrounding neighbor tiles.
+            </li>
+            <li>
+              <strong>Right Click</strong> an square to place a flag if you
+              suspect a mine is hidden there.
+            </li>
+            <li>
+              Uncover all safe tiles to <strong>WIN</strong>. Dig a mine, and
+              it's <strong>GAME OVER</strong>!
+            </li>
+          </ul>
+        </div>
+        <button id="start-game-btn" class="btn-play">Let's Play!</button>
+      </div>
+    </div>
+
+    <!-- Main game container -->
+    <div id="game-container">
+      <div class="game-header">
+        <div class="counter-box">
+          <span> 💣 </span>
+          <span id="mine-counter"> 10</span>
+        </div>
+
+        <button id="reset-btn" class="btn-reset">
+          <h5 style="display: inline">Restart</h5>
+          <span class="material-symbols-outlined"> refresh </span>
+        </button>
+
+        <select id="difficulty-select" class="dropdown">
+          <option value="easy" selected>Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+
+      <div id="game-board"></div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
