@@ -1,0 +1,1 @@
+I recreated this classic game called Minesweeper which I used to play as a kid. I tried to give it a fresh vibe instead of classic look. I programmed this game and the logic behind it entirely by myself. Give it a try.
