@@ -5,7 +5,7 @@ const DIFFICULTIES = {
   hard: { rows: 16, cols: 30, mines: 99 },
 };
 
-// Color coding for numbers
+// Color coding for numbers (neighbour count)
 const colors = [
   "#1976d2",
   "#1976d2",
@@ -169,11 +169,7 @@ function handleLeftClick(r, c) {
   const cellData = board[r][c];
   const cellDiv = document.querySelector(`.cell[data-r="${r}"][data-c="${c}"]`);
 
-  // 3. Mark the cell as revealed
-  cellData.isRevealed = true;
-  cellDiv.classList.add("revealed");
-
-  // 4. Did they click a mine?
+  // 3. Did they click a mine?
   if (cellData.isMine) {
     cellDiv.innerText = "💣";
     cellDiv.classList.add("mine");
@@ -181,8 +177,11 @@ function handleLeftClick(r, c) {
     return;
   }
 
-  // 5. If it's safe, showing the neighbour count
+  // 4. If it's safe, showing the neighbour count
   if (cellData.neighborCount > 0) {
+    // 5. Mark the cell as revealed
+    cellData.isRevealed = true;
+    cellDiv.classList.add("revealed");
     cellDiv.innerText = cellData.neighborCount;
     cellDiv.style.color = colors[cellData.neighborCount];
   } else {
@@ -228,7 +227,7 @@ function triggerGameOver(isWin) {
         }
       }
     }
-    setTimeout(() => alert("BOOM! You hit a mine. Game Over. 💥"), 2000);
+    setTimeout(() => alert("BOOM! You hit a mine. Game Over. 💥"), 1000);
   }
 }
 
